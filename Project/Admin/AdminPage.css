@@ -1,0 +1,16 @@
+.btnClass{
+  background-color: white;
+  width: 100%;
+  border: none;
+  border-radius: 5%;
+  padding: 3px 0;
+ 
+}
+
+.btnClass:focus{
+  border: none;
+  background-color: lightgray;
+  color: white;
+}
+
+
