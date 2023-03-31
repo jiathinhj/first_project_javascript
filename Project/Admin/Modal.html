@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Form Add New Product</title>
+</head>
+
+<body>
+
+  <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalRegisterForm" >Add new</button>
+
+<div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Create new product</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-form">
+          <label for="inputID">ID</label>
+          <input type="number" class="form-control" id="inputID" placeholder="Input ID">
+        </div>
+        <div class="form-group">
+          <label for="inputName">Name</label>
+          <input type="text" class="form-control" id="inputName" placeholder="Input Name">
+        </div>
+        <div class="form-group">
+          <label for="inputPrice">ID</label>
+          <input type="number" class="form-control" id="inputPrice" placeholder="Input Price">
+        </div>
+        <div class="form-group">
+          <label for="inputName">Info</label>
+          <input type="text" class="form-control" id="inputInfo" placeholder="Input Info">
+        </div>
+        <div class="form-group">
+          <label for="inputDetail">Detail</label>
+          <input type="text" class="form-control" id="inputDetail" placeholder="Input Detail">
+        </div>
+        <div class="form-group">
+          <label for="inputStar">Star</label>
+          <input type="text" class="form-control" id="inputStar" placeholder="Input feild">
+        </div>
+        <div class="form-group">
+          <label for="inputImage">Image</label>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" for="customFile">Choose file</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputState">Manufacturer</label>
+          <select id="inputState" class="form-control">
+            <option selected>--Choose manufacturer--</option>
+            <option>...</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="inputState">Manufacturer</label>
+          <select id="inputState" class="form-control">
+            <option selected>--Choose a catagory--</option>
+            <option>...</option>
+          </select>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="submit" class="btn btn-warning">Reset</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
