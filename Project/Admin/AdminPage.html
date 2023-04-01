@@ -8,41 +8,28 @@
   <title>Day 10 - project ecommerce</title>
   <link rel="stylesheet" href="../Admin/AdminPage.css">
 
-  <!-- import css 4 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+  <!-- import BS 4 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   <!-- Font awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
 </head>
 
 <body>
   <div class="container">
-    <!-- nav bar -->
+    <!-- navbar starts -->
     <div class="row">
-      <div class="col-12 col-sm-12 col-lg-12">
+      <div class="col-12 col-sm-12">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-item nav-link active" href="../Admin/AdminPage.html">Home <span
-                  class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link active" href="../Home/HomePage.html">Home <span class="sr-only">(current)</span></a>
               <a class="nav-item nav-link" href="../Admin/AdminPage.html">Admin</a>
             </div>
             <div class="navbar-nav navbar-right">
@@ -52,11 +39,11 @@
         </nav>
       </div>
     </div>
-    <!-- nav bar ends -->
+    <!-- navbar ends -->
 
     <div class="ContentSection">
       <div class="row">
-        <div class="col-2 col-sm-2 col-lg-2">
+        <div class="col-2 col-sm-2">
           <div class="SideBarSection">
             <h4>Danh mục</h4>
             <div class="list-group">
@@ -100,27 +87,29 @@
                   <option value="3">Laptop</option>
                 </select>
                 <br />
-                <button type="button" class="btn btn-light">Filter</button>
+                <button type="button" class="btn btn-light">Fillter</button>
               </div>
             </div>
           </div>
         </div>
 
         <!-- ProductAdminSection -->
-        <div class="col-10 col-sm-10 col-lg-10">
+        <div class="col-10 col-sm-10 ">
           <div class="ProductAdminSection">
             <br><br>
             <!-- search bar -->
             <div class="row">
-              <div class="col-12 col-sm-12 col-lg-12">
+              <div class="col-12 col-sm-12 ">
                 <div class="card car">
                   <div class="card-body">
-                    <div class="col-8 col-sm-8 col-lg-8">
+                    <div class="row">
+                    <div class="col-8 col-sm-8 ">
                       <input type="text" class="form-control" value="" />
                     </div>
-                    <div class="col-4 col-sm-4 col-lg-4">
+                    <div class="col-4 col-sm-4 ">
                       <button type="button" class="btn btn-success">Search</button>
                     </div>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -129,17 +118,14 @@
 
             <!-- product detail -->
             <div class="row">
-              <div class="col-12 col-sm-12 col-lg-12">
+              <div class="col-12 col-sm-12 ">
                 <br><br>
                 <div class="card">
                   <div class="card-body">
                     <!-- button add new -->
-                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalProductForm">Add
-                      new</button>
-
-                    <div class="modal fade" id="modalProductForm" tabindex="-1" role="dialog"
-                      style="padding-top: 200px;">
-                      <div class="modal-dialog">
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalProductForm">Add new</button>
+                    <div class="modal fade" id="modalProductForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
                         <div class="modal-content">
                           <div class="modal-header text-center">
                             <h4 class="modal-title w-100 font-weight-bold">Create new product</h4>
@@ -148,7 +134,7 @@
                             </button>
                           </div>
                           <div class="modal-body">
-                            <div class="form-group">
+                            <div class="mb-form">
                               <label for="inputID">ID</label>
                               <input type="number" class="form-control" id="inputID" placeholder="Input ID">
                             </div>
@@ -169,100 +155,59 @@
                               <input type="text" class="form-control" id="inputDetail" placeholder="Input Detail">
                             </div>
                             <div class="form-group">
-                              <label for="inputStar">Star</label>
-                              <input type="text" class="form-control" id="inputStar" placeholder="Input feild">
-                            </div>
-                            <div class="form-group">
                               <label for="inputImage">Image</label>
                               <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile">
-                                <label class="custom-file-label" for="customFile"
-                                  style="font-weight: unset;">Choose file</label>
+                                <input type="file" class="custom-file-input" id="inputImage">
+                                <label class="custom-file-label" for="inputImage">Choose file</label>
                               </div>
                             </div>
                             <div class="form-group">
-                              <label for="inputState">Manufacturer</label>
-                              <select id="inputState" class="form-control" style="height: fit-content;">
+                              <label for="inputManufacturer">Manufacturer</label>
+                              <select id="inputManufacturer" class="form-control">
                                 <option selected>--Choose manufacturer--</option>
                                 <option>...</option>
                               </select>
                             </div>
                             <div class="form-group">
-                              <label for="inputState">Catagory</label>
-                              <select id="inputState" class="form-control" style="height: fit-content;">
-                                <option selected>--Choose a catagory--</option>
+                              <label for="inputCategory">Category</label>
+                              <select id="inputCategory" class="form-control">
+                                <option selected>--Choose a category--</option>
                                 <option>...</option>
                               </select>
                             </div>
 
                           </div>
                           <div class="modal-footer d-flex">
-                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="submit" class="btn btn-primary" id="btnSave">Save</button>
                             <button type="submit" class="btn btn-warning">Reset</button>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    <!-- add new modal ends -->
+
+
 
 
                     <!-- table product -->
-                    <table class="table table-hover">
+                    <table class="table table-hover table-sm">
                       <thead>
                         <tr>
-                          <th scope="col">Id</th>
+                          <th scope="col">No.</th>
                           <th scope="col">Name</th>
                           <th scope="col">Price</th>
                           <th scope="col">Info</th>
                           <th scope="col">Detail</th>
-                          <th scope="col">Star</th>
                           <th scope="col">Image</th>
-                          <th scope="col">NSX</th>
+                          <th scope="col">Manufacturer</th>
                           <th scope="col">Category</th>
                           <th scope="col">Edit</th>
                           <th scope="col">Delete</th scope="row">
                         </tr>
                       </thead>
-                      <tbody>
-                        <!-- product row 1 -->
-                        <tr>
-                          <th scope="col">1</td>
-                          <td>Samsung Galaxy S22 Ultra 5G</td>
-                          <td>30.990.000₫</td>
-                          <td>6.9 inches, Chip MediaTek Helio G85 (12nm) mạnh mẽ, Ram 4G, Pin 7000 mAh</td>
-                          <td>ProductDetail1</td>
-                          <td>5</td>
-                          <td>image1.jpg</td>
-                          <td>SAMSUNG</td>
-                          <td>Điện thoại</td>
-                          <td>
-                            <button type="button" class="btn btn-warning">Edit</button>
-                          </td>
-                          <td>
-                            <button type="button" class="btn btn-danger">Delete</button>
-                          </td>
-                        </tr>
 
-                        <!-- product row 2 -->
-                        <tr>
-                          <th scope="col">2</td>
-                          <td>Samsung Galaxy S22 Ultra 5G</td>
-                          <td>30.990.000₫</td>
-                          <td>6.9 inches, Chip MediaTek Helio G85 (12nm) mạnh mẽ, Ram 4G, Pin 7000 mAh</td>
-                          <td>ProductDetail1</td>
-                          <td>5</td>
-                          <td>image1.jpg</td>
-                          <td>SAMSUNG</td>
-                          <td>Điện thoại</td>
-                          <td>
-                            <button type="button" class="btn btn-warning">Edit</button>
-                          </td>
-                          <td>
-                            <button type="button" class="btn btn-danger">Delete</button>
-                          </td>
-                        </tr>
-                      </tbody>
+                      <!-- Use JS to implement tbody here -->
+                      <tbody id="productTableBody" />
                     </table>
                     <!-- table end -->
                   </div>
@@ -278,7 +223,7 @@
     <!-- ContentSection ends -->
   </div>
 
-  <script src="AdminPage.js"></script>
+  <script type="module" src="AdminPage.js"></script>
 
 </body>
 

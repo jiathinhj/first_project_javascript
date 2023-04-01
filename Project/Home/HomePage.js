@@ -1,33 +1,33 @@
-var list_product = [];
+import { ParseUtils } from "../Utils/ParseUtils.js";
+import { Product } from "../Models/Product.js";
+
 const productSection = document.getElementById("ProductSection");
 
-class Product {
-  constructor(image_soure, name, manufaturer, price) {
-    this.image_soure = image_soure;
-    this.name = name;
-    this.manufaturer = manufaturer;
-    this.price = price;
-  };
-  get getImageSoure() {
-    return this.image_soure
-  }
-  get getName() {
-    return this.name
-  }
-  get getManufacturer() {
-    return this.manufaturer
-  }
-  get getPrice() {
-    return this.price
+
+/** check if listProduct is null */
+function checkListProduct() {
+  let listProduct = localStorage.getItem("listProduct");
+  if (listProduct == null) {
+    listProduct = [
+      new Product("../Asset/Product/ImgMobile1.png", "Reno6 Z 5G", "OPPO", "9.490.000₫", "6.9 inches, Chip MediaTek Helio G85 (12nm) mạnh mẽ, Ram 4G, Pin 7000 mAh", "ProductDetail1", "Điện thoại"),
+      new Product("../Asset/Product/iphone14prm.png", "Iphone 14 promax", "Apple", "28.490.000₫", "6.9 inches, Chip MediaTek Helio G85 (12nm) mạnh mẽ, Ram 4G, Pin 7000 mAh", "ProductDetail1", "Điện thoại"),
+      new Product("../Asset/Product/zfold3.png", "Z Fold 3", "Samsung", "19.990.000₫", "6.9 inches, Chip MediaTek Helio G85 (12nm) mạnh mẽ, Ram 4G, Pin 7000 mAh", "ProductDetail1", "Điện thoại"),
+      new Product("../Asset/Product/S22Ultra.png", "S22 Ultra", "Samsung", "23.990.000₫", "6.9 inches, Chip MediaTek Helio G85 (12nm) mạnh mẽ, Ram 4G, Pin 7000 mAh", "ProductDetail1", "Điện thoại"),
+    ];
+    localStorage.setItem("listProduct", JSON.stringify(listProduct));
   }
 }
-function displayProduct(list_product) {
+checkListProduct();
+
+
+function displayProduct(listProduct) {
   var result = "";
-  list_product.forEach(element => {
-    result += `<div class="col-3 col-sm-3 col-lg-3">
+  listProduct.forEach(element => {
+    result +=
+      `<div class="col-3 col-sm-3 col-lg-3">
     <div class="row">
       <div class="col-12 col-sm-12 col-lg-12">`
-      + `<img src="` + element.getImageSoure + `" alt="" style="width: 80%;">`
+      + `<img src="` + element.getImageSoure + `" alt="" style="height: 300px;">`
       + `<h3  style="font-weight:bold;">` + element.getName + `</h3>`
       + `<h4>Hãng sản xuất: ` + element.getManufacturer + `</h4>`
       + ` <ul class="rating" style="list-style: none; display: flex; font-size: 20px; padding-inline-start: 0px">
@@ -60,23 +60,16 @@ function displayProduct(list_product) {
       </div>
     </div>
   </div>
-</div>`
+</div>`;
   });
-    
-  document.getElementById("ProductSection").innerHTML = result;
+
+  productSection.innerHTML = result;
 };
 
-function myFunction() {
-  list_product1 = [
-    new Product("../Asset/Product/ImgMobile1.png", "Reno6 Z 5G", "OPPO", "9.490.000₫"),
-    new Product("../Asset/Product/ImgMobile1.png", "Reno6 Z 5G", "OPPO", "9.490.000₫"),
-    new Product("../Asset/Product/ImgMobile1.png", "Reno6 Z 5G", "OPPO", "9.490.000₫"),
-    new Product("../Asset/Product/ImgMobile1.png", "Reno6 Z 5G", "OPPO", "9.490.000₫"),
-    new Product("../Asset/Product/ImgMobile1.png", "Reno6 Z 5G", "OPPO", "9.490.000₫"),
-    new Product("../Asset/Product/ImgMobile1.png", "Reno6 Z 5G", "OPPO", "9.490.000₫"),
-    new Product("../Asset/Product/ImgMobile1.png", "Reno6 Z 5G", "OPPO", "9.490.000₫"),
-    new Product("../Asset/Product/ImgMobile1.png", "Reno6 Z 5G", "OPPO", "9.490.000₫")
-  ]
-  displayProduct(list_product1);
+function onLoad() {
+  var listProductJSON = localStorage.getItem("listProduct");
+  const parseUtils = new ParseUtils();
+  var listProduct = parseUtils.parseJSONtoProduct(listProductJSON);
+  displayProduct(listProduct);
 }
-myFunction();
+onLoad();

@@ -6,29 +6,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home Page</title>
-  <link rel="stylesheet" href="../Home/HomePage.css">
+  <link rel="stylesheet" href="HomePage.css">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap 4 reference-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 
 <body>
   <div class="container">
-    <!-- nav bar -->
+    <!-- navbar starts -->
     <div class="row">
       <div class="col-12 col-sm-12 col-lg-12">
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#FED100;">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-item nav-link active" href="../Admin/AdminPage.html">Home <span
-                  class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link active" href="../Admin/AdminPage.html">Home <span class="sr-only">(current)</span></a>
               <a class="nav-item nav-link" href="../Admin/AdminPage.html">Admin</a>
             </div>
             <div class="navbar-nav navbar-right">
@@ -39,8 +37,8 @@
         </nav>
       </div>
     </div>
-    <!-- nav bar ends -->
-    <!-- Banner -->
+    <!-- navbar ends -->
+    <!-- Banner starts -->
     <div class="BannerSection">
       <div class="row">
         <div class="col-12 col-sm-12 col-lg-12">
@@ -70,62 +68,27 @@
     </div>
     <!-- Banner ends -->
 
-    <br> 
+    <!-- ads banner starts-->
+    <br>
     <div class="row">
       <div class="col-12 col-sm-12 col-lg-12">
         <img src="../Asset/Product/ImgInfor.png" alt="" style="width: 100%">
       </div>
     </div>
     <br>
+    <!-- ads banner ends-->
 
 
     <!-- Product section -->
-    <div id="ProductSection" class="ProductSection">
-        <div class="col-3 col-sm-3 col-lg-3">
-          <div class="row">
-            <div class="col-12 col-sm-12 col-lg-12">
-              <img src="../Asset/Product/ImgMobile1.png" alt="" style="width: 80%;">
-              <h3  style="font-weight:bold;">Reno6 Z 5G</h3>
-              <h4>Hãng sản xuất: OPPO</h4>
-              <ul class="rating" style="list-style: none; display: flex; font-size: 20px; padding-inline-start: 0px">
-                <li>
-                  <p class="fa fa-star selected" style="color: orange"></p>
-                </li>
-                <li>
-                  <p class="fa fa-star selected" style="color: orange"></p>
-                </li>
-                <li>
-                  <p class="fa fa-star selected" style="color: orange"></p>
-                </li>
-                <li>
-                  <p class="fa fa-star selected" ></p>
-                </li>
-                <li>
-                  <p class="fa fa-star selected" ></p>
-                </li>
-              </ul>
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h4>9.490.000₫</h4>
-                </div>
-                <div class="ccol-sm-6 col-md-6 col-lg-6">
-                  <button type="button" class="btn btn-default" style="border: 0px">
-                    <p class="fa fa-shopping-cart" style="color: red; font-size: 35px"></p>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
+    <div id="ProductSection" class="ProductSection"/>
     <!-- Product ends -->
   </div>
 
-  <script src="HomPage.js"></script>
+  <script src="HomePage.js" type="module"></script>
 </body>
-
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </html>
