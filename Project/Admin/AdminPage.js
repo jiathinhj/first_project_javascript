@@ -1,16 +1,33 @@
-import { Product } from "../Models/Product.js";
-import { ParseUtils } from "../Utils/ParseUtils.js";
+import { ProductMethod } from "./ProductMethod.js";
 
 let productTableBody = document.getElementById("productTableBody");
 
-function displayProductOnAdminPage(listProduct){
-    var result = "";
+let listProduct = ProductMethod.getListProductFromLocalStorage();
+displayProductOnAdminPage(listProduct);
+
+const btnSave = document.getElementById("btnSave");
+btnSave.addEventListener("click", function () {
+    let listProduct = ProductMethod.addNewProduct();
+    displayProductOnAdminPage(listProduct);
+});
+
+const btnSearch = document.getElementById("btnSearch");
+btnSearch.addEventListener("click", function(){
+    let searchName = document.getElementById("txtSearch").value;
+    let currentList = ProductMethod.searchProductByName(searchName);
+
+    displayProductOnAdminPage(currentList);
+})
+
+
+function displayProductOnAdminPage(listProduct) {
+    productTableBody.innerHTML = "";
     var count = 0;
     listProduct.forEach(element => {
-        count ++;
-        result += 
-        '<tr>' +
-            '<th scope="col">' + count + '</td>' +
+        count++;
+        productTableBody.innerHTML +=
+            '<tr id="' + element.getID + '">' +
+            '<td>' + count + '</td>' +
             '<td>' + element.getName + '</td>' +
             '<td>' + element.getPrice + '</td>' +
             '<td>' + element.getInfo + '</td>' +
@@ -18,40 +35,39 @@ function displayProductOnAdminPage(listProduct){
             '<td><img src="' + element.getImageSoure + '" width="50px"></td>' +
             '<td>' + element.getManufacturer + '</td>' +
             '<td>' + element.getCategory + '</td>' +
-            '<td><button type="button" class="btn btn-warning">Edit</button></td>' +
-            '<td><button type="button" class="btn btn-danger">Delete</button></td>' +
-        '</tr>'
+            '<td>' + element.getRating + '</td>' +
+            '</tr>'
     });
 
-    productTableBody.innerHTML = result;
+    listProduct.forEach(element => {
+        let tr = document.getElementById(element.getID.toString());
+        let td_delete = document.createElement("td");
+        let td_edit = document.createElement("td");
+
+        let btnDelete = document.createElement("button");
+        btnDelete.setAttribute("type", "button");
+        btnDelete.setAttribute("class", "btn btn-danger");
+        btnDelete.innerText = "Delete";
+        btnDelete.addEventListener("click", function () {
+            let listProduct = ProductMethod.deleteProduct(element.getID);
+            displayProductOnAdminPage(listProduct);
+        })
+
+        let btnEdit = document.createElement("button");
+        btnEdit.setAttribute("type", "button");
+        btnEdit.setAttribute("class", "btn btn-warning");
+        btnEdit.innerText = "Edit";
+        btnEdit.setAttribute("data-target", "#modalProductForm");
+        btnEdit.setAttribute("data-toggle", "modal");
+        btnEdit.addEventListener("click", function () {
+            let listProduct = ProductMethod.editProduct(element.getID);
+            displayProductOnAdminPage(listProduct);
+        })
+
+
+        td_edit.appendChild(btnEdit);
+        td_delete.appendChild(btnDelete);
+        tr.appendChild(td_edit)
+        tr.appendChild(td_delete);
+    });
 }
-
-function onAdminLoad() {
-    let listProductJSON = localStorage.getItem("listProduct");
-    const parseUtils = new ParseUtils();
-    var listProduct = parseUtils.parseJSONtoProduct(listProductJSON);
-    displayProductOnAdminPage(listProduct);
-    const btnSave = document.getElementById("btnSave");
-    btnSave.addEventListener("click", addNewProduct);
-}
-onAdminLoad();
-
-
-function addNewProduct(){
-    var inputID = document.getElementById("inputID").value;
-    var inputName = document.getElementById("inputName").value;
-    var inputPrice = document.getElementById("inputPrice").value;
-    var inputInfo = document.getElementById("inputInfo").value;
-    var inputDetail = document.getElementById("inputDetail").value;
-    var inputImage = document.getElementById("inputImage").value;
-    var inputManufacturer = document.getElementById("inputManufacturer").value;
-    var inputCategory = document.getElementById("inputCategory").value;
-    console.log(inputID, inputName, inputPrice, inputInfo, inputDetail, inputImage, inputManufacturer, inputCategory);
-    let newProduct = new Product(inputImage, inputName, inputManufacturer, inputPrice, inputInfo, inputDetail, inputCategory);
-    let listProductJSON = localStorage.getItem("listProduct");
-    let parseUtils = new ParseUtils();
-    let listProduct = parseUtils.parseJSONtoProduct(listProductJSON);
-    listProduct.push(newProduct);
-    localStorage.setItem("listProduct", JSON.stringify(listProduct));
-    onAdminLoad();
-}//image_soure, name, manufaturer, price, info, detail, categor
