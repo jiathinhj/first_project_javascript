@@ -12,12 +12,19 @@ btnSave.addEventListener("click", function () {
 });
 
 const btnSearch = document.getElementById("btnSearch");
-btnSearch.addEventListener("click", function(){
+btnSearch.addEventListener("click", function () {
     let searchName = document.getElementById("txtSearch").value;
     let currentList = ProductMethod.searchProductByName(searchName);
 
     displayProductOnAdminPage(currentList);
 })
+
+let btnEditSave = document.getElementById("btnEditSave");
+btnEditSave.addEventListener("click", function () {
+    let listProduct = ProductMethod.saveEditProduct();
+
+    displayProductOnAdminPage(listProduct);
+});
 
 
 function displayProductOnAdminPage(listProduct) {
@@ -57,17 +64,15 @@ function displayProductOnAdminPage(listProduct) {
         btnEdit.setAttribute("type", "button");
         btnEdit.setAttribute("class", "btn btn-warning");
         btnEdit.innerText = "Edit";
-        btnEdit.setAttribute("data-target", "#modalProductForm");
+        btnEdit.setAttribute("data-target", "#modalEditForm");
         btnEdit.setAttribute("data-toggle", "modal");
         btnEdit.addEventListener("click", function () {
-            let listProduct = ProductMethod.editProduct(element.getID);
-            displayProductOnAdminPage(listProduct);
-        })
-
+            ProductMethod.editProduct(element.getID);
+        });
 
         td_edit.appendChild(btnEdit);
         td_delete.appendChild(btnDelete);
-        tr.appendChild(td_edit)
+        tr.appendChild(td_edit);
         tr.appendChild(td_delete);
     });
 }

@@ -96,7 +96,7 @@
                   <option value="3">Laptop</option>
                 </select>
                 <br />
-                <button type="button" class="btn btn-light">Fillter</button>
+                <button type="button" class="btn btn-light">Filter</button>
               </div>
             </div>
           </div>
@@ -179,14 +179,17 @@
                                 <label for="inputManufacturer">Manufacturer</label>
                                 <select id="inputManufacturer" class="form-control">
                                   <option selected>--Choose manufacturer--</option>
-                                  <option>...</option>
+                                  <option>OPPO</option>
+                                  <option>APPLE</option>
+                                  <option>SAMSUNG</option>
+=
                                 </select>
                               </div>
                               <div class="form-group">
                                 <label for="inputCategory">Category</label>
                                 <select id="inputCategory" class="form-control">
                                   <option selected>--Choose a category--</option>
-                                  <option>...</option>
+                                  <option>Điện thoại</option>
                                 </select>
                               </div>
 
@@ -219,6 +222,73 @@
 
                       <!-- Use JS to implement tbody here -->
                       <tbody id="productTableBody" />
+                      <div class="modal fade" id="modalEditForm" tabindex="-1" role="dialog"
+                      aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header text-center">
+                            <h4 class="modal-title w-100 font-weight-bold">Eidt product</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="form-group">
+                              <label for="inputID">ID</label>
+                              <input type="number" class="form-control" id="inputEditID" placeholder="Input ID">
+                            </div>
+                            <div class="form-group">
+                              <label for="inputName">Name</label>
+                              <input type="text" class="form-control" id="inputEditName" placeholder="Input Name">
+                            </div>
+                            <div class="form-group">
+                              <label for="inputPrice">Price</label>
+                              <input type="text" class="form-control" id="inputEditPrice" placeholder="Input Price">
+                            </div>
+                            <div class="form-group">
+                              <label for="inputName">Info</label>
+                              <input type="text" class="form-control" id="inputEditInfo" placeholder="Input Info">
+                            </div>
+                            <div class="form-group">
+                              <label for="inputDetail">Detail</label>
+                              <input type="text" class="form-control" id="inputEditDetail" placeholder="Input Detail">
+                            </div>
+                            <div class="form-group">
+                              <label for="inputStar">Rating</label>
+                              <input type="number" class="form-control" id="inputEditStar" placeholder="Input Star">
+                              <div class="form-group">
+                                <label for="inputImage">Image</label>
+                                <div class="custom-file">
+                                  <input type="file" class="custom-file-input" id="inputEditImage">
+                                  <label class="custom-file-label" for="inputEditImage">Choose file</label>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label for="inputEditManufacturer">Manufacturer</label>
+                                <select id="inputEditManufacturer" class="form-control">
+                                  <option selected>--Choose manufacturer--</option>
+                                  <option>OPPO</option>
+                                  <option>APPLE</option>
+                                  <option>SAMSUNG</option>
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <label for="inputEditCategory">Category</label>
+                                <select id="inputEditCategory" class="form-control">
+                                  <option selected>--Choose a category--</option>
+                                  <option>Điện thoại</option>
+                                </select>
+                              </div>
+
+                            </div>
+                            <div class="modal-footer d-flex">
+                              <button type="submit" class="btn btn-primary" id="btnEditSave">Save</button>
+                              <button type="submit" class="btn btn-warning">Reset</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
                     </table>
                     <!-- table end -->
                   </div>
