@@ -10,8 +10,8 @@ function checkListProduct() {
   if (listProduct == null) {
     listProduct = [
       new Product(["../Asset/Product/ImgMobile1.png", "Reno6 Z 5G", "OPPO", "9.490.000₫", "6.9 inches, Chip MediaTek Helio G85 (12nm) mạnh mẽ, Ram 4G, Pin 7000 mAh", "ProductDetail1", "Điện thoại", 3]),
-      new Product(["../Asset/Product/iphone14prm.png", "Iphone 14 promax", "Apple", "28.490.000₫", "6.9 inches, Chip MediaTek Helio G85 (12nm) mạnh mẽ, Ram 4G, Pin 7000 mAh", "ProductDetail1", "Điện thoại",3]),
-      new Product(["../Asset/Product/zfold3.png", "Z Fold 3", "Samsung", "19.990.000₫", "6.9 inches, Chip MediaTek Helio G85 (12nm) mạnh mẽ, Ram 4G, Pin 7000 mAh", "ProductDetail1", "Điện thoại",3]),
+      new Product(["../Asset/Product/iphone14prm.png", "Iphone 14 promax", "Apple", "28.490.000₫", "6.9 inches, Chip MediaTek Helio G85 (12nm) mạnh mẽ, Ram 4G, Pin 7000 mAh", "ProductDetail1", "Máy tính",3]),
+      new Product(["../Asset/Product/zfold3.png", "Z Fold 3", "Samsung", "19.990.000₫", "6.9 inches, Chip MediaTek Helio G85 (12nm) mạnh mẽ, Ram 4G, Pin 7000 mAh", "ProductDetail1", "Tablet",3]),
       new Product(["../Asset/Product/S22Ultra.png", "S22 Ultra", "Samsung", "23.990.000₫", "6.9 inches, Chip MediaTek Helio G85 (12nm) mạnh mẽ, Ram 4G, Pin 7000 mAh", "ProductDetail1", "Điện thoại",3]),
     ];
     localStorage.setItem("listProduct", JSON.stringify(listProduct));

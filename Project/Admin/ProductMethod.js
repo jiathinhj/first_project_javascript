@@ -19,8 +19,39 @@ export class ProductMethod {
     return null;
   }
 
+  static getManufacturerList() {
+    let listProduct = this.getListProductFromLocalStorage();
+    var manufacturerList = []
+    // return (listProduct.push([])).reduceRight((total, ele) => {
+    //   if(!total.includes(ele.getManufacturer)){total.push(ele.getManufacturer)}
+    // });
+    // // for (var i = 0; i < listProduct.length; i++) {
+    //   if (manufacturerList.indexOf(listProduct[i].getManufacturer) === -1) {
+    //     manufacturerList.push(listProduct[i].getManufacturer)
+    //   }
+    // };
+    listProduct.forEach(element => {
+      let manufacturer = element.getManufacturer;
+      if(!manufacturerList.includes(manufacturer)){
+        manufacturerList.push(manufacturer);
+      }
+    });
+    return manufacturerList;
+  }
+
+  static getCategoryList() {
+    let listProduct = this.getListProductFromLocalStorage();
+    var categoryList = []
+    listProduct.forEach(element => {
+      if (!categoryList.includes(element.getCategory)) {
+        categoryList.push(element.getCategory);
+      }
+    });
+    return categoryList;
+  }
+
   static addNewProduct() {
-    var inputID = document.getElementById("inputID").value;
+    // var inputID = document.getElementById("inputID").value;
     var inputName = document.getElementById("inputName").value;
     var inputPrice = document.getElementById("inputPrice").value;
     var inputInfo = document.getElementById("inputInfo").value;
@@ -64,6 +95,24 @@ export class ProductMethod {
 
     return result;
   }
+
+  static searchProductByManufacturer(searchManufacturer) {
+    let listProduct = this.getListProductFromLocalStorage();
+
+    let result = [];
+    listProduct.forEach(element => {
+      if (element.getManufacturer.toUpperCase().includes(searchManufacturer.toUpperCase().trim())) {
+        result.push(element);
+      }
+    });
+
+    localStorage.setItem("currentSearchManufacturer", searchManufacturer);
+
+    return result;
+  }
+
+
+
 
   static editProduct(productID) {
     let listProduct = this.getListProductFromLocalStorage();
