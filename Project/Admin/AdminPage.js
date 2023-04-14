@@ -163,17 +163,3 @@ function displayProductOnAdminPage(listProduct) {
 
 displayProductOnAdminPage(listProduct);
 
-let btnChange = document.getElementById("btnTest");
-btnChange.addEventListener("click", () => {
-    let test = document.getElementById("test");
-    console.dir(test);
-});
-
-let test = [1, 2, 3];
-let result = 0;
-for(let i = 0; i < test.length; i ++){
-    if(i % 2 == 0){
-        result += test[i];
-    }
-}
-document.getElementById("test").innerHTML = i;
